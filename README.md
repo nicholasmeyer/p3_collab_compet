@@ -39,24 +39,30 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 ### Instructions
 
-Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
+```
+Usage: 
 
-### (Optional) Challenge: Crawler Environment
+python collab_compete.py     [--n_episodes] <n_episodes> 
+                     		 [--seed] <seed> 
+                     		 [--buffer_size] <buffer_size> 
+                     		 [--batch_size] <batch_size> 
+                     		 [--gamma] <gamma> 
+                     		 [--tau] <tau> 
+                     		 [--lr_actor] <lr> 
+                     		 [--lr_critic] <lr>
+                             [--weight_decay] <weight_decay>
+                     		 [--train_test] <train_test>
 
-After you have successfully completed the project, you might like to solve the more difficult **Soccer** environment.
+Options: 
 
-![Soccer][image2]
-
-In this environment, the goal is to train a team of agents to play soccer.  
-
-You can read more about this environment in the ML-Agents GitHub [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#soccer-twos).  To solve this harder task, you'll need to download a new Unity environment.  (**Note**: Udacity students should not submit a project with this new environment.)
-
-You need only select the environment that matches your operating system:
-- Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux.zip)
-- Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer.app.zip)
-- Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86.zip)
-- Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86_64.zip)
-
-Then, place the file in the `p3_collab-compet/` folder in the DRLND GitHub repository, and unzip (or decompress) the file.  Next, open `Soccer.ipynb` and follow the instructions to learn how to use the Python API to control the agent.
-
-(_For AWS_) If you'd like to train the agents on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agents without enabling a virtual screen, but you will be able to train the agents.  (_To watch the agents, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
+    --n_episodes <n_episodes>:     maximum number of training episodes (default=1000)
+    --seed <seed>:                 initialize pseudo random number generator (default=0)
+    --buffer_size <buffer_size>:   maximum size of buffer (default=1e5)
+    --batch_size <batch_size>:     size of each training batch (default=128)
+    --gamma <gamma>:               discount factor (default=0.99)
+    --tau <tau>:                   interpolation parameter (default=1e-3)
+    --lr_actor <lr>:               learning rate actor (default=1e-4)
+    --lr_critic <lr>:              learning rate critic (default=1e-4)
+    --weight_decay <weight_decay>  regularization parameter (default=0.)
+    --train_test <train_test>:     0 to train and 1 to test agent (default=0)
+    -h, --help                     show this help message and exit.
